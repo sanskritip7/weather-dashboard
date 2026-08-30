@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,55 +12,194 @@
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
-        <h1>🌦️ Weather Dashboard</h1>
+        <!-- Header -->
+        <header class="header">
 
-        <div class="search-box">
-            <input 
-                type="text" 
-                id="cityInput" 
-                placeholder="Enter city name"
+            <p class="subtitle">WEATHER DASHBOARD</p>
+
+            <h1>
+                Check the weather<br>
+                anywhere 🌤️
+            </h1>
+
+            <p class="header-text">
+                Get real-time weather information for any city.
+            </p>
+
+        </header>
+
+
+        <!-- Search Area -->
+        <div class="search-area">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                >
+
+                <button id="searchButton">
+                    Search
+                </button>
+
+            </div>
+
+
+            <!-- Recent Searches Dropdown -->
+            <div
+                id="historyDropdown"
+                class="history-dropdown"
             >
 
-            <button id="searchButton">
-                Search
-            </button>
-        </div>
-
-        <div id="weatherContainer" class="weather-container">
-
-            <h2 id="cityName">Search for a city</h2>
-
-            <p id="weatherDescription"></p>
-
-            <div class="temperature">
-                <span id="temperature">--</span>°C
-            </div>
-
-            <div class="weather-details">
-
-                <div class="detail">
-                    <span>💧</span>
-                    <p>Humidity</p>
-                    <strong id="humidity">--%</strong>
+                <div class="history-title">
+                    🕐 Recent Searches
                 </div>
 
-                <div class="detail">
-                    <span>💨</span>
-                    <p>Wind Speed</p>
-                    <strong id="windSpeed">-- m/s</strong>
+                <div id="historyList">
+
+                    <p class="no-history">
+                        No recent searches
+                    </p>
+
                 </div>
 
             </div>
 
         </div>
 
+
+        <!-- Error Message -->
         <p id="errorMessage" class="error"></p>
 
-    </div>
+
+        <!-- Weather Card -->
+        <section class="weather-container">
+
+            <div class="weather-main">
+
+                <div>
+
+                    <p class="location-label">
+                        CURRENT WEATHER
+                    </p>
+
+                    <h2 id="cityName">
+                        Search for a city
+                    </h2>
+
+                    <p id="weatherDescription">
+                        Enter a city above to see the weather
+                    </p>
+
+                </div>
+
+                <div
+                    class="weather-icon"
+                    id="weatherIcon"
+                >
+                    🌤️
+                </div>
+
+            </div>
+
+
+            <!-- Temperature -->
+            <div class="temperature">
+
+                <span id="temperature">--</span>
+
+                <sup>°C</sup>
+
+            </div>
+
+
+            <!-- Weather Details -->
+            <div class="weather-details">
+
+
+                <!-- Feels Like -->
+                <div class="detail">
+
+                    <div class="detail-icon">
+                        🌡️
+                    </div>
+
+                    <div>
+
+                        <p>Feels Like</p>
+
+                        <strong id="feelsLike">
+                            --°C
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Humidity -->
+                <div class="detail">
+
+                    <div class="detail-icon">
+                        💧
+                    </div>
+
+                    <div>
+
+                        <p>Humidity</p>
+
+                        <strong id="humidity">
+                            --%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Wind -->
+                <div class="detail">
+
+                    <div class="detail-icon">
+                        💨
+                    </div>
+
+                    <div>
+
+                        <p>Wind Speed</p>
+
+                        <strong id="windSpeed">
+                            -- m/s
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                Powered by OpenWeather 🌍
+            </p>
+
+        </footer>
+
+    </main>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
